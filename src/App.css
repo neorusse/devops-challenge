@@ -24,6 +24,7 @@ body {
   width: 80%;
   margin: 0 auto;
   background-color: gray;
+  display: flex;
 }
 
 .container {
@@ -39,8 +40,39 @@ Form Styles
 ****************************
 ***************************/
 
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo {
+  width: 170px;
+  margin-right: 50px;
+}
+
+.header-barcode {
+  width: 45%;
+}
+
+.intro h1,
+.intro h2 {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.intro h2 {
+  font-size: 15px;
+  margin: 10px 0;
+}
+
+.intro-text {
+  margin-bottom: 10px;
+}
+
 table {
   border-collapse: collapse;
+  margin-top: 10px;
+  width: 100%;
 }
 
 table,
@@ -50,4 +82,12 @@ td {
 
 span {
   display: inline-flex;
+}
+
+.form-text {
+  font-size: 14px;
+}
+
+td p {
+  padding: 6px;
 }
