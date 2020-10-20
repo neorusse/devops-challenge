@@ -1,16 +1,18 @@
 import React from "react";
 
-function Header() {
+function Intro() {
   return (
-    <div>
+    <div className="intro">
       <h1>UNEMPLOYMENT INSURANCE APPLICATION</h1>
       <h2>INSTRUCTIONS</h2>
-      <p>
+      <p className="intro-text">
         Complete this application including any applicable attachment(s). Print
-        or type the information. Use blue or black ink only. Answer all
-        questions on each page. Review your application thoroughly for
-        completeness. An incomplete application may delay or prevent the filing
-        of your claim, or cause benefits to be denied. If the Employment
+        or type the information. Use blue or black ink only.
+      </p>
+      <p>
+        Answer all questions on each page. Review your application thoroughly
+        for completeness. An incomplete application may delay or prevent the
+        filing of your claim, or cause benefits to be denied. If the Employment
         Development Department (EDD) needs to verify any of the information you
         provide while filing a claim, you will receive additional forms by mail
         and will be asked to provide additional information and/or
@@ -26,4 +28,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Intro;
