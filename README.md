@@ -6,13 +6,16 @@
 
 ParallelScore Convert PDF to WebForm Bounty Challenge.
 
-App Url: [pdf2webform](https://#.com/)
+App Url: [pdf2webform](<[https://#.com/](https://ps-react-appform.azurewebsites.net)>)
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### Table of Content
 
 [Technology Used](#technology-used)<br/>
-[Building](#building)<br/>
-[Testing](#testing)<br/>
+[Running the App Locally](#Running-the-App-Locally)<br/>
+[Docker](#Docker)<br/>
+[Production Deployment](#Production-Deployment)<br/>
 [License](#license)<br/>
 [Author](#author)
 
@@ -22,15 +25,15 @@ React
 
 Docker
 
-Azure App Service
+Azure Container Registry (ACR)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Azure App Service - Web App for Containers
 
-## Available Scripts
+### Running the App Locally
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -38,17 +41,47 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
+#### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
 
-### `npm run build`
+#### `npm run build`
 
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
+
+### Docker
+
+#### Building the Image
+
+`docker build -t parallelscore.azurecr.io/ps-appform:latest .`
+
+#### List your Docker Image
+
+Run `docker images`
+
+#### Run App in Detached Mode
+
+Run `docker run -d -p 80:8080 parallelscore.azurecr.io/ps-appform`
+
+#### To view App in Browser
+
+Enter `localhost`
+
+#### Login to your Azure Container Registry
+
+Run `docker login parallelscore.azurecr.io` and supply your username and password for authentication
+
+#### Push Image to Docker Registry in Azure
+
+Run `docker push parallelscore.azurecr.io/ps-appform:latest`
+
+### Production Deployment
+
+Setup Web App for Containers Service and deploy the stored app image in ACR to it.
 
 ### License
 
