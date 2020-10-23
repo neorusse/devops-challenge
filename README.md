@@ -6,7 +6,7 @@
 
 ParallelScore Convert PDF to WebForm Bounty Challenge.
 
-App Url: [pdf2webform](<[https://#.com/](https://ps-react-appform.azurewebsites.net)>)
+App Url: [pdf2webform](https://ps-react-appform.azurewebsites.net)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
