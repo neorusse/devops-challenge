@@ -25,5 +25,5 @@ steps:
       docker tag pdf2form:latest pdf2webformacr.azurecr.io/$(Build.Repository.Name):latest
       docker image ls -a
       docker login -u $(dockerusername) -p $(dockerpassword) pdf2webformacr.azurecr.io
-      docker push pdf2webformacr.azurecr.io/pdf2form:latest
+      docker push pdf2webformacr.azurecr.io/pdf2webform:latest
     displayName: "Dockor build and push"
