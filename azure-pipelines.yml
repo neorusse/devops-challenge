@@ -22,8 +22,8 @@ steps:
   - script: |
       docker build --rm -f Dockerfile -t pdf2webform:latest .
       docker image ls -a
-      docker tag pdf2webform:latest pdf2webformacr.azurecr.io/$(Build.Repository.Name):latest
+      docker tag pdf2webform:latest pdf2webformacr.azurecr.io/pdf2webform:latest
       docker image ls -a
       docker login -u $(dockerusername) -p $(dockerpassword) pdf2webformacr.azurecr.io
       docker push pdf2webformacr.azurecr.io/pdf2webform:latest
-    displayName: "Dockor build and push"
+    displayName: "Docker build and push"
