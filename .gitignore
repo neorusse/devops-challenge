@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Terraform
+iac/acr.tfplan
+iac/.terraform
+iac/terraform.tfstate
