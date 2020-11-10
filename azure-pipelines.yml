@@ -1,0 +1,29 @@
+trigger:
+  - master
+
+pool:
+  name: Hosted ubuntu 1604
+  demands: npm
+
+steps:
+  - task: Npm@1
+    displayName: "npm install"
+    inputs:
+      workingDir: .
+      verbose: false
+
+  - task: AzureKeyVault@1
+    inputs:
+      azureSubscription: "Udacity-Azure-DevOps (142d7bae-a76d-4879-ade5-f56eda136d3b)"
+      KeyVaultName: "pdf2webformvault"
+      SecretsFilter: "*"
+      RunAsPreJob: false
+
+  - script: |
+      docker build --rm -f Dockerfile -t pdf2webform:latest .
+      docker image ls -a
+      docker tag pdf2form:latest pdf2webformacr.azurecr.io/$(Build.Repository.Name):latest
+      docker image ls -a
+      docker login -u $(dockerusername) -p $(dockerpassword) pdf2webformacr.azurecr.io
+      docker push pdf2webformacr.azurecr.io/pdf2form:latest
+    displayName: "Dockor build and push"
